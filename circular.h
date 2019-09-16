@@ -75,6 +75,7 @@ class CircularLinkedList : public List<T> {
         }
 
         T operator[](int index) {
+            // si la lista está vacía?
             auto aux=this->head;
             for(int i=0;i<index;i++)
                 aux=aux->next;
@@ -82,6 +83,7 @@ class CircularLinkedList : public List<T> {
         }
 
         bool empty() {
+            // Esto puede ser en una línea
             if(size()==0){
                 return true;
             }
@@ -135,6 +137,7 @@ class CircularLinkedList : public List<T> {
         }
 
         BidirectionalIterator<T> begin() {
+            // Esto puede ser en una línea
             auto aux= BidirectionalIterator<T>(this->head);
             return aux;
         }

@@ -1,7 +1,7 @@
 #ifndef FORWARD_ITERATOR_H
 #define FORWARD_ITERATOR_H
 
-#include "iterator.h"
+#include "../iterator.h"
 
 template <typename T> 
 class ForwardIterator : public Iterator<T> {
@@ -21,6 +21,8 @@ class ForwardIterator : public Iterator<T> {
         else
             return false;
     }
+
+    // Falta controlar el caso vacío
 
     ForwardIterator<T> operator++() {
         this->current=this->current->next;

@@ -2,7 +2,7 @@
 #define FORWARD_H
 
 #include "list.h"
-#include "forward_iterator.h"
+#include "iterators/forward_iterator.h"
 
 template <typename T>
 class ForwardList : public List<T> {
@@ -74,6 +74,7 @@ class ForwardList : public List<T> {
 
     void pop_front()
     {
+        // No es necesario controlar la excepción, pero no está mal tampcoco
         if(!empty())
         {
             auto temp = this->head;
@@ -97,6 +98,7 @@ class ForwardList : public List<T> {
     }
 
     void pop_back() {
+        // No es necesario controlar la excepción, pero no está mal tampcoco
         if(empty())
         {
             throw exception();
@@ -113,8 +115,6 @@ class ForwardList : public List<T> {
             this->nodes--;
 
         }
-
-
     }
 
     T operator[](int index) {
@@ -129,6 +129,7 @@ class ForwardList : public List<T> {
     }
 
     bool empty() {
+        // Esto podría hacerse en una línea
         if(this->nodes == 0){
             return true;
         }
@@ -178,6 +179,7 @@ class ForwardList : public List<T> {
     }
 
     void reverse() {
+        // Qué haces aquí? 
         for(int i=size();i>1;i--){
             swap(i,i-1);
         }
@@ -193,6 +195,7 @@ class ForwardList : public List<T> {
     }
 
     ForwardIterator<T> begin() {
+        // Esto puede ser en una línea
         auto aux= ForwardIterator<T>(this->head);
         return aux;
     }

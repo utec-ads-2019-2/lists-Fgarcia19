@@ -2,7 +2,7 @@
 #define LINKED_H
 
 #include "list.h"
-#include "bidirectional_iterator.h"
+#include "iterators/bidirectional_iterator.h"
 
 template <typename T>
 class LinkedList : public List<T> {
@@ -126,6 +126,7 @@ class LinkedList : public List<T> {
     }
 
     T operator[](int index) {
+        // Deberías revisar si el índice es mayor o igual a size o menor a 0
         if(index!=size()){
             auto aux=this->head;
             for(int i=0;i<index;i++)
@@ -136,6 +137,7 @@ class LinkedList : public List<T> {
     }
 
     bool empty() {
+        // Esto puede ser en una línea
         if(size()==0)
             return true;
         else
@@ -195,6 +197,7 @@ class LinkedList : public List<T> {
     }
 
     BidirectionalIterator<T> begin() {
+        // ESsto puede ser en una línea
         auto aux= BidirectionalIterator<T>(this->head);
         return aux;
     }
